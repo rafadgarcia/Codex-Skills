@@ -31,7 +31,7 @@ Before changing TypeScript code or configuration:
 ## Task Routing
 
 - **Type system design**: Read `references/type-system.md`.
-- **Runtime boundaries, validation, env, API contracts**: Read `references/runtime-boundaries.md`; combine with `$secure-web-apps` when user data, auth, payments, webhooks, or abuse resistance are involved.
+- **Runtime boundaries, validation, env, API contracts**: Read `references/runtime-boundaries.md`; apply the project's existing security requirements when user data, authentication, payments, webhooks, or abuse resistance are involved.
 - **Generics, mapped types, conditional types, utility types**: Read `references/generics-and-utility-types.md`.
 - **React TypeScript components, hooks, events, forms, state**: Read `references/react-typescript.md`; combine with `$frontend-design` for UI implementation.
 - **JS-to-TS migration or strictness rollout**: Read `references/migration.md`.

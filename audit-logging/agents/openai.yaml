@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Logging"
+  short_description: "Review, design, and implement audit trails"
+  default_prompt: "Use $audit-logging to review the audit coverage of this sensitive workflow."
