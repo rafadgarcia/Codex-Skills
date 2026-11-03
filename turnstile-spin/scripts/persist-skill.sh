@@ -39,14 +39,33 @@ for command_name in git python3; do
   }
 done
 
-PROJECT_ROOT="$(pwd -P)"
-TARGET_DIR="$(python3 -I -c 'import os,sys; print(os.path.realpath(os.path.abspath(sys.argv[1])))' "$(dirname "$PATH_ARG")")"
-if [[ "$TARGET_DIR" != "$PROJECT_ROOT" && "$TARGET_DIR" != "$PROJECT_ROOT/"* ]]; then
+if ! python3 -I - "$PATH_ARG" <<'PY'
+import os
+import sys
+
+project_root = os.path.realpath(os.getcwd())
+target_dir = os.path.realpath(os.path.abspath(os.path.dirname(sys.argv[1])))
+try:
+    inside_project = os.path.commonpath((project_root, target_dir)) == project_root
+except ValueError:
+    inside_project = False
+raise SystemExit(0 if inside_project else 1)
+PY
+then
   echo "persist-skill: target must be inside the current project" >&2
   echo '{"status":"error","reason":"target_outside_project"}'
   exit 1
 fi
-if [[ -e "$TARGET_DIR" ]] && ! python3 -I -c 'import os,sys; raise SystemExit(0 if not os.listdir(sys.argv[1]) else 1)' "$TARGET_DIR"; then
+TARGET_DIR="$(python3 -I -c 'import os,sys; print(os.path.realpath(os.path.abspath(sys.argv[1])).replace(os.sep, "/"))' "$(dirname "$PATH_ARG")")"
+if ! python3 -I - "$TARGET_DIR" <<'PY'
+import os
+import sys
+
+target = sys.argv[1]
+if os.path.lexists(target) and (not os.path.isdir(target) or os.listdir(target)):
+    raise SystemExit(1)
+PY
+then
   echo "persist-skill: target directory is not empty" >&2
   echo '{"status":"error","reason":"target_not_empty"}'
   exit 1

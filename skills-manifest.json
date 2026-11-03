@@ -41,7 +41,14 @@
       "branch": "main",
       "subPath": ".claude/skills/ui-ux-pro-max",
       "protectedFiles": [
+        "SKILL.md",
         "data/web-interface.csv"
+      ],
+      "excludeFiles": [
+        "scripts/tests/test_catalog_refresh.py",
+        "scripts/tests/test_catalog_summary_line_endings.py",
+        "scripts/tests/test_relevance_evaluator.py",
+        "scripts/tests/test_skill_script_paths.py"
       ]
     },
     {
@@ -85,14 +92,21 @@
       "mode": "overlay",
       "repo": "https://github.com/cloudflare/skills.git",
       "branch": "main",
-      "subPath": "skills/cloudflare"
+      "subPath": "skills/cloudflare",
+      "protectedFiles": [
+        "SKILL.md"
+      ]
     },
     {
       "name": "turnstile-spin",
       "mode": "overlay",
       "repo": "https://github.com/cloudflare/skills.git",
       "branch": "main",
-      "subPath": "skills/turnstile-spin"
+      "subPath": "skills/turnstile-spin",
+      "protectedFiles": [
+        "scripts/persist-skill.sh",
+        "tests/test_persist_skill.py"
+      ]
     },
     {
       "name": "workers-best-practices",
@@ -125,43 +139,59 @@
     },
     {
       "name": "prisma-client-api",
-      "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "mode": "overlay",
+      "repo": "https://github.com/prisma/skills.git",
+      "branch": "main",
+      "subPath": "prisma-client-api",
+      "notes": "Sincronizada com o upstream oficial; preservar apenas customizações explicitamente listadas em protectedFiles."
     },
     {
       "name": "prisma-database-setup",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "repo": "https://github.com/prisma/skills.git",
+      "branch": "main",
+      "subPath": "prisma-database-setup",
+      "replacement": "prisma-orm-setup",
+      "notes": "Nome de compatibilidade depreciado no upstream; mantida localmente até a instalação do substituto prisma-orm-setup."
     },
     {
       "name": "restful-api",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "notes": "Snapshot congelado; origem upstream não foi comprovada no histórico local. Não sincronizar automaticamente."
     },
     {
       "name": "typescript-engineering",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "notes": "Snapshot congelado; origem upstream não foi comprovada no histórico local. Não sincronizar automaticamente."
     },
     {
       "name": "wrangler",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "notes": "Snapshot congelado; origem upstream não foi comprovada no histórico local. Usar documentação Cloudflare atual antes de executar comandos."
     },
     {
       "name": "reverse-engineer-anything",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "repo": "https://github.com/morluto/rea.git",
+      "branch": "main",
+      "subPath": ".agents/skills/reverse-engineer-anything",
+      "notes": "Origem conhecida no repositório REA; congelada para preservar a versão validada localmente."
     },
     {
       "name": "rea-tool-design",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "repo": "https://github.com/morluto/rea.git",
+      "branch": "main",
+      "subPath": ".agents/skills/rea-tool-design",
+      "notes": "Origem conhecida no repositório REA; congelada para preservar a versão validada localmente."
     },
     {
       "name": "rea-changelog-update",
       "mode": "pinned",
-      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+      "repo": "https://github.com/morluto/rea.git",
+      "branch": "main",
+      "subPath": ".agents/skills/rea-changelog-update",
+      "notes": "Origem conhecida no repositório REA; congelada para preservar a versão validada localmente."
     }
   ]
 }

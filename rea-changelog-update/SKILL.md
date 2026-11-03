@@ -6,7 +6,7 @@ description: Prepare or rewrite REA release changelogs and GitHub release notes 
 # REA changelog update
 
 Use this for release-note preparation and contributor attribution. Read
-[docs/releasing.md](../../../docs/releasing.md) from the repository root for
+[docs/releasing.md](https://github.com/morluto/rea/blob/main/docs/releasing.md) for
 publication authority and the existing checkpoint checks. This skill prepares
 notes; it does not authorize merging, tagging, or publishing.
 

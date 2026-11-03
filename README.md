@@ -39,23 +39,33 @@ O arquivo [`skills-manifest.json`](skills-manifest.json) controla como cada skil
 | **`postgres-best-practices`** | `overlay` | `neondatabase/postgres-skills` | 14 guias de PostgreSQL 14–18 puro (schema, índices, `EXPLAIN`, backup, pool). |
 | **`prisma-upgrade-v7`** | `overlay` | `prisma/skills` | Migração Prisma v6 -> v7 (`prisma.config.ts` e driver adapters). |
 | **`prisma-cli`** | `overlay` | `prisma/skills` | Comandos CLI do Prisma v7. |
+| **`prisma-client-api`** | `overlay` | `prisma/skills` | Queries, filtros, relações e transações do Prisma Client. |
 | **`cloudflare`** | `overlay` | `cloudflare/skills` | 320 arquivos de referência da plataforma Cloudflare (R2, Workers, KV, D1, AI). |
 | **`workers-best-practices`** | `overlay` | `cloudflare/skills` | Boas práticas de produção para Cloudflare Workers. |
 | **`turnstile-spin`** | `overlay` | `cloudflare/skills` | Configuração end-to-end do CAPTCHA Cloudflare Turnstile. |
 | **`webhook-handler-patterns`** | `overlay` | `hookdeck/webhook-skills` | Verificação de assinatura raw body, idempotência e retries. |
 | **`prisma-postgres`** | `pinned` | `prisma/skills` | Congelada porque o upstream deprecou esse nome e apagou `references/`. |
-| **`prisma-client-api`** | `pinned` | *(Congelada local)* | Preservada sem atualização automática do upstream. |
-| **`prisma-database-setup`** | `pinned` | *(Congelada local)* | Preservada sem atualização automática do upstream. |
-| **`restful-api`** | `pinned` | *(Congelada local)* | Preservada sem atualização automática do upstream. |
-| **`typescript-engineering`** | `pinned` | *(Congelada local)* | Preservada sem atualização automática do upstream. |
-| **`wrangler`** | `pinned` | *(Congelada local)* | Preservada sem atualização automática do upstream. |
-| **`reverse-engineer-anything`** | `pinned` | *(Congelada local)* | Engenharia reversa e observação de runtime (binários, JS, Android). |
-| **`rea-tool-design`** | `pinned` | *(Congelada local)* | Padrões de CLI/scripts para engenharia reversa. |
-| **`rea-changelog-update`** | `pinned` | *(Congelada local)* | Fluxo de atualização por diff de versões/changelogs. |
+| **`prisma-database-setup`** | `pinned` | `prisma/skills` | Nome de compatibilidade depreciado; substituta upstream: `prisma-orm-setup`. |
+| **`restful-api`** | `pinned` | *(não comprovada)* | Snapshot congelado; sem origem confiável registrada. |
+| **`typescript-engineering`** | `pinned` | *(não comprovada)* | Snapshot congelado; sem origem confiável registrada. |
+| **`wrangler`** | `pinned` | *(não comprovada)* | Snapshot congelado; validar comandos na documentação Cloudflare. |
+| **`reverse-engineer-anything`** | `pinned` | `morluto/rea` | Engenharia reversa e observação de runtime. |
+| **`rea-tool-design`** | `pinned` | `morluto/rea` | Padrões de ferramentas e contratos REA. |
+| **`rea-changelog-update`** | `pinned` | `morluto/rea` | Fluxo de changelogs e releases REA. |
 
 ---
 
 ## 3. Como Operar no Futuro (Casos Semelhantes)
+
+### Validação automática
+
+O workflow `.github/workflows/validate-skills.yml` valida o manifesto, a correspondência entre skills e pastas, os links Markdown locais, os dados/testes do UI/UX Pro Max e os testes offline do Turnstile em cada push e pull request. Para rodar localmente:
+
+```powershell
+python scripts/validate-skills.py
+python -m unittest discover -s ui-ux-pro-max/scripts/tests -v
+python -m unittest discover -s turnstile-spin/tests -v
+```
 
 ### Caso 1: Atualizar todas as skills clonadas de repositórios externos (`overlay`)
 Sempre que quiser trazer as novidades das skills oficiais (Cloudflare, Prisma, Postgres, UI/UX Pro Max, etc.) sem perder suas customizações nem tocar nas skills `local` ou `pinned`:

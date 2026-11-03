@@ -1,0 +1,25 @@
+name: Validate skills
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+      - name: Validate skill catalog and links
+        run: python scripts/validate-skills.py
+      - name: Validate UI/UX Pro Max data and tests
+        working-directory: ui-ux-pro-max
+        run: |
+          python scripts/validate_data.py
+          python -m unittest discover -s scripts/tests -v
+      - name: Validate Turnstile persistence tests
+        working-directory: turnstile-spin
+        run: python -m unittest discover -s tests -v

@@ -1,5 +1,18 @@
 # Preferências globais de execução
 
+## Roteamento de skills
+
+Ative a menor combinação de skills que cubra o pedido. Use uma skill de domínio como principal e acrescente outra apenas quando ela tratar de uma necessidade concreta.
+
+- **Interface e produto visual:** `$frontend-design` para implementar ou polir interfaces; `$ui-ux-pro-max` para pesquisa de padrões e recomendações de design; `$site-recreation` para reconstruir um site com referências locais; `$ui-responsive-audit` para auditoria de breakpoints; `$playwright-interactive` para depuração interativa no navegador/Electron.
+- **Next.js e deploy:** `$nextjs-16-modern` para Next.js 16+ App Router; `$docker-caddy-vps` para Docker, Compose, Caddy ou deploy VPS.
+- **Dados e APIs:** `$restful-api` para contratos HTTP/REST; `$typescript-engineering` para tipos, validação runtime e toolchain TypeScript; `$postgres-best-practices` para projeto e desempenho PostgreSQL; use `$prisma-client-api` para queries/transações, `$prisma-database-setup` para configuração de banco, `$prisma-cli` para comandos ORM/CLI e `$prisma-upgrade-v7` para migração v6→v7. `$prisma-postgres` cobre provisionamento Prisma Postgres.
+- **Cloudflare:** `$cloudflare` para escolha de produtos/arquitetura; `$workers-best-practices` para código/configuração de Workers; `$wrangler` antes de comandos Wrangler; `$turnstile-spin` para Turnstile.
+- **Integrações e auditoria:** `$webhook-handler-patterns` para receivers de webhook; `$audit-logging` para trilhas de alterações sensíveis, não para logs comuns.
+- **Engenharia reversa (REA):** `$reverse-engineer-anything` para análise de artefatos/runtime; `$rea-tool-design` para contratos e ferramentas REA; `$rea-changelog-update` para changelogs/releases REA.
+
+Ao usar `$rea-tool-design` ou `$rea-changelog-update`, os guias do projeto REA podem não estar instalados localmente; abra os links GitHub dessas skills como fonte de orientação.
+
 ## Preferência de execução para tarefas complexas
 
 Ao receber uma tarefa, priorize qualidade, completude e confiabilidade, não a tentativa de fazer tudo monoliticamente.
