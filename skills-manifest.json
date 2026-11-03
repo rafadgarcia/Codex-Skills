@@ -122,6 +122,46 @@
       "branch": "main",
       "subPath": "prisma-postgres",
       "notes": "Congelada porque o upstream deprecou prisma-postgres e removeu os arquivos de references/ (substituída lá por prisma-postgres-setup)"
+    },
+    {
+      "name": "prisma-client-api",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "prisma-database-setup",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "restful-api",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "typescript-engineering",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "wrangler",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "reverse-engineer-anything",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "rea-tool-design",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
+    },
+    {
+      "name": "rea-changelog-update",
+      "mode": "pinned",
+      "notes": "Preservada da instalação local por decisão do usuário; sem atualização automática do upstream."
     }
   ]
 }

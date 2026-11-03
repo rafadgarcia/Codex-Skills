@@ -1,32 +1,20 @@
-# Project instructions
+# Preferências globais de execução
 
-Use the available local Codex skills when applicable:
+## Preferência de execução para tarefas complexas
 
-Use the minimum set of skills necessary for the task. Prefer one primary domain skill, then add cross-cutting skills only when the task materially requires them. Do not invoke a skill merely because the technology appears somewhere in the repository.
+Ao receber uma tarefa, priorize qualidade, completude e confiabilidade, não a tentativa de fazer tudo monoliticamente.
 
-- Use `$frontend-design` for frontend interfaces, pages, components, visual systems, motion, layout, accessibility, and production-grade UI polish.
-- Use `$ui-ux-pro-max` for UI/UX research, design-system recommendations, product-specific interface guidance, color/type/style selection, stack-specific UI guidance, and searchable design intelligence.
-- Use `$nextjs-16-modern` when building, refactoring, or debugging Next.js 16+ App Router applications with React 19, `proxy.ts`, async `params`/`searchParams`/`cookies()`/`headers()`, Tailwind CSS v4 (`@tailwindcss/postcss`), or `output: "standalone"`.
-- Use `$site-recreation` when recreating, redesigning, or rebuilding a website faithfully from a local folder of references (screenshots, exports, documents, assets) and performing baseline visual/responsive QA.
-- Use `$ui-responsive-audit` for automated, evidence-driven Playwright responsiveness audits across ultrawide, desktop, iPad, tablet, and mobile viewports, including sticky/pinned scroll states and collision detection.
-- Use `$playwright-interactive` for persistent browser or Electron UI debugging through `js_repl`.
-- Use `$docker-caddy-vps` when writing or reviewing `Dockerfile`, `compose.yaml` / `docker-compose.yml`, container healthchecks, log rotation, `init: true`, or Caddy `edge` reverse proxy deployments.
-- Use `$postgres-best-practices` for PostgreSQL schema design, indexing strategies, query optimization (`EXPLAIN ANALYZE`), query patterns, transaction isolation, connection pooling, `pg_dump`/`pg_restore` backups, and database performance diagnostics.
-- Use Prisma skills when working with Prisma: `$prisma-cli` for CLI/migrations commands, `$prisma-postgres` for Prisma Postgres provisioning/operations, and `$prisma-upgrade-v7` for Prisma v7 migrations and `prisma.config.ts` / driver adapter changes.
-- Use Cloudflare skills when working with Cloudflare: `$cloudflare` for platform tasks (including R2, Workers, KV, D1, Wrangler), `$workers-best-practices` for Workers code/config review, and `$turnstile-spin` for Turnstile setup.
-- Use `$webhook-handler-patterns` for webhook receivers, raw body signature verification, retry behavior, idempotency, and Express/Next.js/FastAPI webhook gotchas.
-- Use `$audit-logging` when reviewing, designing, implementing, or fixing audit trails for sensitive state changes such as financial operations, permission changes, impersonation, administrative actions, and destructive operations. Do not use it for ordinary application logs, observability, debugging, or routine reads.
+- Se a tarefa for simples ou couber confortavelmente em uma única execução, faça-a diretamente, sem criar etapas artificiais.
+- Se a complexidade, quantidade de requisitos, tamanho do código ou necessidade de validação puder prejudicar a qualidade, decomponha a tarefa em etapas menores e coerentes.
+- Faça essa decomposição por conta própria. O usuário não precisa pedir explicitamente que a tarefa seja dividida.
+- Execute as etapas sequencialmente e de forma autônoma, sem parar para pedir confirmação entre elas, salvo quando faltar uma informação realmente indispensável ou existir uma decisão importante que não possa ser inferida com segurança.
+- Sempre que possível, valide o resultado de cada etapa antes de avançar, usando testes, build, lint, type-check, inspeção do resultado ou outro método apropriado.
+- Não sacrifique requisitos, simplifique silenciosamente, deixe TODOs ou finja concluir partes apenas para conseguir terminar tudo em uma única passagem.
+- Se perceber durante a execução que a tarefa ficou maior ou mais complexa do que parecia inicialmente, pode reorganizar o plano e subdividi-la mais.
+- O objetivo é concluir o pedido inteiro, mesmo que internamente sejam necessárias várias etapas.
 
-For UI implementation tasks, use `$frontend-design` as the primary implementation skill (paired with `$nextjs-16-modern` in Next.js 16 projects). Add `$ui-ux-pro-max` when the task needs design-system research, style exploration, palette/type selection, or product-specific UI guidance. For reference-based rebuilds, use `$site-recreation` (and `$ui-responsive-audit` when full multi-viewport matrix verification is needed).
+Em resumo: decomponha quando isso aumentar a confiabilidade; não decomponha apenas por conveniência. Planeje internamente, execute autonomamente e não omita requisitos para caber tudo de uma vez.
 
-For audit-trail work, use `$audit-logging` as the primary domain skill.
+## Verificação em tarefas de programação
 
-## Skill maintenance
-
-When working directly inside a skill folder, keep the skill self-contained. Put reusable procedures in `SKILL.md`, detailed supporting guidance in `references/`, executable helpers in `scripts/`, and templates or starter files in `assets/`.
-
-When updating a skill, keep the `SKILL.md` frontmatter concise and accurate so Codex can trigger the skill correctly.
-
-To update cloned skills from their upstream repositories while preserving local customizations, run `.\sync-skills.ps1` (or `.\sync-skills.ps1 -DryRun` to preview changes) based on `skills-manifest.json`.
-
-Do not add extra README, installation, changelog, or quick-reference files inside individual skill folders unless explicitly requested.
+Antes de considerar o trabalho concluído, verifique o estado real do projeto. Quando aplicável, rode testes, lint, type-check e build e corrija problemas introduzidos pelas alterações. Preserve o comportamento existente que não foi solicitado alterar.
