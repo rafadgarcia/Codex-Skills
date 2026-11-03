@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker, Caddy & VPS"
+  short_description: "Docker Compose, Next.js Standalone & Caddy edge patterns"
+  default_prompt: "Use $docker-caddy-vps to configure or review the Dockerfile, compose.yaml, healthchecks, and Caddy edge routing for this project."

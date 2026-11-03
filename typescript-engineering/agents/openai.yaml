@@ -1,4 +1,0 @@
-interface:
-  display_name: "TypeScript Engineering"
-  short_description: "Type-safe TypeScript design and tooling"
-  default_prompt: "Use $typescript-engineering to design, review, or migrate TypeScript code with strict types and runtime-safe boundaries."

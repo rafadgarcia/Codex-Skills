@@ -5,6 +5,11 @@ description: >
   sequence (verify first, parse second, handle idempotently), idempotency,
   error handling, retry logic, or framework-specific issues with Express,
   Next.js, or FastAPI.
+license: MIT
+metadata:
+  author: hookdeck
+  version: "0.1.0"
+  repository: https://github.com/hookdeck/webhook-skills
 ---
 
 # Webhook Handler Patterns

@@ -1,0 +1,4 @@
+interface:
+  display_name: Site Recreation
+  short_description: Recreate reference-based websites faithfully
+  default_prompt: Recrie este site a partir das referências disponíveis, preservando identidade visual, conteúdo e responsividade.

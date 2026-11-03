@@ -1,0 +1,4 @@
+interface:
+  display_name: "Next.js 16 Modern"
+  short_description: "Next.js 16, React 19, proxy.ts & Tailwind v4 patterns"
+  default_prompt: "Use $nextjs-16-modern to build or refactor this Next.js 16 application following modern App Router, proxy.ts, and standalone build conventions."

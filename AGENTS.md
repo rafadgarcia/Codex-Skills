@@ -6,32 +6,20 @@ Use the minimum set of skills necessary for the task. Prefer one primary domain 
 
 - Use `$frontend-design` for frontend interfaces, pages, components, visual systems, motion, layout, accessibility, and production-grade UI polish.
 - Use `$ui-ux-pro-max` for UI/UX research, design-system recommendations, product-specific interface guidance, color/type/style selection, stack-specific UI guidance, and searchable design intelligence.
-- Use `$restful-api` for HTTP APIs, REST endpoints, CRUD routes, route handlers, controllers, request/response schemas, API documentation, and backend HTTP interfaces.
-- Use `$typescript-engineering` for TypeScript type design, tsconfig/compiler options, strictness, JavaScript-to-TypeScript migration, runtime validation boundaries, unknown vs any, type guards, discriminated unions, generics, utility types, React TypeScript patterns, and TypeScript tooling.
-- Use `$secure-web-apps` for web application security, including authentication, authorization, input validation, XSS/injection, CSRF, CORS, CSP/security headers, JWT/OAuth/tokens, SSRF, redirects, sensitive data, secrets, uploads, storage, database exposure, supply chain, deployment hardening, audit logs, rate limits, and abuse prevention.
-- Use `$check-my-vibe` for authorized passive public-site scans through Check My Vibe, especially for security headers, exposed secrets, source maps, public files, and deployment mistakes.
-- Use `$supabase` for Supabase Database, Auth, Storage, Edge Functions, Realtime, RLS, migrations, CLI, SSR clients, and Supabase-specific troubleshooting.
-- Use `$supabase-postgres-best-practices` for Supabase/Postgres schema, query, index, connection, locking, and performance work.
-- Use Prisma skills when working with Prisma: `$prisma-client-api` for queries and transactions, `$prisma-cli` for CLI/migrations commands, `$prisma-database-setup` for provider setup, `$prisma-postgres` for Prisma Postgres, and `$prisma-upgrade-v7` for Prisma v7 migrations.
-- Use Cloudflare skills when working with Cloudflare: `$cloudflare` for platform tasks, `$workers-best-practices` for Workers code/config review, `$wrangler` for CLI commands, and `$turnstile-spin` for Turnstile setup.
+- Use `$nextjs-16-modern` when building, refactoring, or debugging Next.js 16+ App Router applications with React 19, `proxy.ts`, async `params`/`searchParams`/`cookies()`/`headers()`, Tailwind CSS v4 (`@tailwindcss/postcss`), or `output: "standalone"`.
+- Use `$site-recreation` when recreating, redesigning, or rebuilding a website faithfully from a local folder of references (screenshots, exports, documents, assets) and performing baseline visual/responsive QA.
+- Use `$ui-responsive-audit` for automated, evidence-driven Playwright responsiveness audits across ultrawide, desktop, iPad, tablet, and mobile viewports, including sticky/pinned scroll states and collision detection.
+- Use `$playwright-interactive` for persistent browser or Electron UI debugging through `js_repl`.
+- Use `$docker-caddy-vps` when writing or reviewing `Dockerfile`, `compose.yaml` / `docker-compose.yml`, container healthchecks, log rotation, `init: true`, or Caddy `edge` reverse proxy deployments.
+- Use `$postgres-best-practices` for PostgreSQL schema design, indexing strategies, query optimization (`EXPLAIN ANALYZE`), query patterns, transaction isolation, connection pooling, `pg_dump`/`pg_restore` backups, and database performance diagnostics.
+- Use Prisma skills when working with Prisma: `$prisma-cli` for CLI/migrations commands, `$prisma-postgres` for Prisma Postgres provisioning/operations, and `$prisma-upgrade-v7` for Prisma v7 migrations and `prisma.config.ts` / driver adapter changes.
+- Use Cloudflare skills when working with Cloudflare: `$cloudflare` for platform tasks (including R2, Workers, KV, D1, Wrangler), `$workers-best-practices` for Workers code/config review, and `$turnstile-spin` for Turnstile setup.
 - Use `$webhook-handler-patterns` for webhook receivers, raw body signature verification, retry behavior, idempotency, and Express/Next.js/FastAPI webhook gotchas.
-- Use `$test-driven-development` when implementing logic, fixing bugs, changing behavior, or adding regression coverage.
-- Use `$debugging-and-error-recovery` when tests fail, builds break, runtime behavior is unexpected, or a bug needs root-cause diagnosis.
-- Use `$source-driven-development` when framework/library correctness depends on current official documentation or the user asks for verified/source-backed implementation.
-- Use `$observability-and-instrumentation` when adding logs, metrics, tracing, alerts, or production diagnostics for endpoints, jobs, integrations, queues, or services.
-- Use `$shipping-and-launch` when preparing production deploys, staged rollouts, launch checklists, monitoring, or rollback plans.
+- Use `$audit-logging` when reviewing, designing, implementing, or fixing audit trails for sensitive state changes such as financial operations, permission changes, impersonation, administrative actions, and destructive operations. Do not use it for ordinary application logs, observability, debugging, or routine reads.
 
-For UI implementation tasks, use `$frontend-design` as the primary implementation skill. Add `$ui-ux-pro-max` when the task needs design-system research, style exploration, palette/type selection, or product-specific UI guidance.
+For UI implementation tasks, use `$frontend-design` as the primary implementation skill (paired with `$nextjs-16-modern` in Next.js 16 projects). Add `$ui-ux-pro-max` when the task needs design-system research, style exploration, palette/type selection, or product-specific UI guidance. For reference-based rebuilds, use `$site-recreation` (and `$ui-responsive-audit` when full multi-viewport matrix verification is needed).
 
-For security-sensitive API endpoints, use `$restful-api` as the primary API skill and add `$secure-web-apps` when auth, authorization, sensitive data, public exposure, uploads, payments, tokens, abuse resistance, or security headers are materially involved.
-
-For TypeScript API, frontend, Prisma, Supabase, Cloudflare, or webhook work, add `$typescript-engineering` only when the task touches type contracts, runtime validation, generated types, compiler errors, migration, or strictness.
-
-For public deployed-site posture checks, use `$check-my-vibe` for the passive external scan and `$secure-web-apps` to interpret broader security implications or plan code fixes.
-
-For Supabase, Prisma, Cloudflare, or webhook work, add `$secure-web-apps` only when the task touches auth, authorization, tenant scope, secrets, user data, payments, uploads, storage, public exposure, or abuse resistance.
-
-For bug fixes, use `$debugging-and-error-recovery` as the primary skill. Add `$test-driven-development` when implementing a fix needs regression coverage. For production launches, use `$shipping-and-launch` as the primary skill and add `$observability-and-instrumentation` or `$secure-web-apps` only when monitoring, rollback, risk, or user data are materially involved.
+For audit-trail work, use `$audit-logging` as the primary domain skill.
 
 ## Skill maintenance
 
@@ -39,4 +27,6 @@ When working directly inside a skill folder, keep the skill self-contained. Put 
 
 When updating a skill, keep the `SKILL.md` frontmatter concise and accurate so Codex can trigger the skill correctly.
 
-Do not add extra README, installation, changelog, or quick-reference files unless explicitly requested.
+To update cloned skills from their upstream repositories while preserving local customizations, run `.\sync-skills.ps1` (or `.\sync-skills.ps1 -DryRun` to preview changes) based on `skills-manifest.json`.
+
+Do not add extra README, installation, changelog, or quick-reference files inside individual skill folders unless explicitly requested.

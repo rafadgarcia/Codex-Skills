@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Manifesto de origem e política de atualização das skills do Codex",
+  "skills": [
+    {
+      "name": "audit-logging",
+      "mode": "local",
+      "description": "Skill autoral para revisão, arquitetura e implementação de trilhas de auditoria"
+    },
+    {
+      "name": "site-recreation",
+      "mode": "local",
+      "description": "Skill autoral para recriação fiel de sites a partir de pasta de referências + QA visual integrado"
+    },
+    {
+      "name": "nextjs-16-modern",
+      "mode": "local",
+      "description": "Skill autoral para Next.js 16 App Router, React 19, proxy.ts, Tailwind v4 e standalone Docker build"
+    },
+    {
+      "name": "docker-caddy-vps",
+      "mode": "local",
+      "description": "Skill autoral para Docker Compose (init: true, log rotation, healthchecks), Next.js standalone e borda Caddy (rede edge)"
+    },
+    {
+      "name": "frontend-design",
+      "mode": "overlay",
+      "repo": "https://github.com/vipulgupta2048/codex-skills.git",
+      "branch": "master",
+      "subPath": "skills/frontend-design",
+      "protectedFiles": [
+        "SKILL.md",
+        "references/visual-intensity-and-motion.md"
+      ],
+      "notes": "Protege a customização local de calibração de intensidade visual e motion"
+    },
+    {
+      "name": "ui-ux-pro-max",
+      "mode": "overlay",
+      "repo": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill.git",
+      "branch": "main",
+      "subPath": ".claude/skills/ui-ux-pro-max",
+      "protectedFiles": [
+        "data/web-interface.csv"
+      ]
+    },
+    {
+      "name": "ui-responsive-audit",
+      "mode": "overlay",
+      "repo": "https://github.com/ov3rf1w/ui-responsive-audit.git",
+      "branch": "main",
+      "subPath": "",
+      "excludeFiles": [
+        "README.md",
+        "README.zh-CN.md",
+        "LICENSE",
+        ".gitignore",
+        "package.json",
+        "docs/*"
+      ]
+    },
+    {
+      "name": "playwright-interactive",
+      "mode": "overlay",
+      "repo": "https://github.com/openai/skills.git",
+      "branch": "main",
+      "subPath": "skills/.curated/playwright-interactive"
+    },
+    {
+      "name": "webhook-handler-patterns",
+      "mode": "overlay",
+      "repo": "https://github.com/hookdeck/webhook-skills.git",
+      "branch": "main",
+      "subPath": "skills/webhook-handler-patterns"
+    },
+    {
+      "name": "postgres-best-practices",
+      "mode": "overlay",
+      "repo": "https://github.com/neondatabase/postgres-skills.git",
+      "branch": "main",
+      "subPath": "skills/postgres-best-practices"
+    },
+    {
+      "name": "cloudflare",
+      "mode": "overlay",
+      "repo": "https://github.com/cloudflare/skills.git",
+      "branch": "main",
+      "subPath": "skills/cloudflare"
+    },
+    {
+      "name": "turnstile-spin",
+      "mode": "overlay",
+      "repo": "https://github.com/cloudflare/skills.git",
+      "branch": "main",
+      "subPath": "skills/turnstile-spin"
+    },
+    {
+      "name": "workers-best-practices",
+      "mode": "overlay",
+      "repo": "https://github.com/cloudflare/skills.git",
+      "branch": "main",
+      "subPath": "skills/workers-best-practices"
+    },
+    {
+      "name": "prisma-cli",
+      "mode": "overlay",
+      "repo": "https://github.com/prisma/skills.git",
+      "branch": "main",
+      "subPath": "prisma-cli"
+    },
+    {
+      "name": "prisma-upgrade-v7",
+      "mode": "overlay",
+      "repo": "https://github.com/prisma/skills.git",
+      "branch": "main",
+      "subPath": "prisma-upgrade-v7"
+    },
+    {
+      "name": "prisma-postgres",
+      "mode": "pinned",
+      "repo": "https://github.com/prisma/skills.git",
+      "branch": "main",
+      "subPath": "prisma-postgres",
+      "notes": "Congelada porque o upstream deprecou prisma-postgres e removeu os arquivos de references/ (substituída lá por prisma-postgres-setup)"
+    }
+  ]
+}

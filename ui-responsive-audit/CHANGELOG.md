@@ -1,0 +1,42 @@
+# Changelog
+
+## 0.5.0 - 2026-08-23
+
+- Added five wide and ultrawide viewport presets, including browser-height and wide-low variants.
+- Added automatic progress sampling for long sticky/pinned sections with per-state coverage and evidence.
+- Added usable-viewport clipping checks that account for fixed top and bottom chrome.
+- Added intrinsic image geometry analysis for excessive `object-cover` scale and hidden-image fraction.
+- Added overflow-ancestor clipping checks and interactive modal/dialog audit states.
+- Added unit coverage for cover geometry and pinned-scroll calculations.
+
+## 0.4.0 - 2026-06-21
+
+- Added severity-ranked `findings-*.json` output.
+- Added `summary-*.json` with coverage matrix and expected-count checks.
+- Added Markdown and HTML audit reports.
+- Added annotated evidence screenshots for visual section findings.
+- Added optional framework-neutral project config via `ui-responsive-audit.config.json`.
+- Added capture expected-count guard for screenshot series.
+
+## 0.3.0 - 2026-06-21
+
+- Added static sibling-content collision detection inside section audits.
+- Added detection for oversized headings crossing into paragraphs, cards, tables, panels, or definition lists without triggering page overflow.
+- Fixed Windows static-server route resolution for nested routes such as `/standorte/`.
+
+## 0.2.0 - 2026-06-21
+
+- Added midpage section audits for reviews, pricing, CTAs, cards, sticky panels, and other non-hero sections.
+- Added fixed/sticky overlay collision detection for section content.
+- Added `SECTIONS`, `SECTION_AUDIT`, `SECTION_SCROLL_MODE`, `SECTION_LIMIT`, and `SECTION_SCREENSHOTS`.
+- Added section viewport screenshots so fixed headers, cookie banners, and sticky overlays remain visible in evidence captures.
+- Documented the normal-scroll versus direct-scroll distinction for tablet/header issues.
+
+## 0.1.0 - 2026-06-21
+
+- Initial Codex skill release.
+- Added sample-first responsiveness workflow.
+- Added Playwright audit script with route discovery, viewport presets, overlap checks, text clipping checks, tap-target hints, layer conflict checks, and person-image crop risk detection.
+- Added screenshot capture mode for hero, full-page, and scroll-slice series.
+- Added static server for production `out` directories.
+- Added OpenAI agent metadata.
